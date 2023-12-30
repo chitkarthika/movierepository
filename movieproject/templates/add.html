@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+<form  method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+   <label>=====></label> <input type="text" name="name" placeholder="Enter movie name"><BR><BR>
+    <label>=====></label><input type="text" name="desc" placeholder="Enter movie description"><BR><BR>
+    <label>=====></label><input type="year" name="year" placeholder="Enter movie year"><BR><BR>
+    <label>=====></label><input type="file" name="img" ><BR><BR>
+    <input type="submit" style="font-size: larger; color: #fff; background-color: #62529c; border: 2pt ridge ;height: 50px;width: 150px;cursor: pointer;">
+    <a href="/" style="border: 2px solid green; padding: 10px 20px; text-align: center; background-color: Beige;"> <-GO BACK </a>
+
+</form>
+ {% for m in messages %}
+    <h2>{{m}}</h2>
+    {% endfor %}
+{% endblock %}
